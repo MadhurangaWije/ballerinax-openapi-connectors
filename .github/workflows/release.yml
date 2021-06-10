@@ -22,6 +22,10 @@ jobs:
           JAVA_OPTS: -DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true
         run: |
            ./gradlew build -Prelease=true -Premote=true
+      - name: Print Current Directory
+        run: pwd
+      - name: List files
+        run: ls -al
       - name: Git status
         run: git status
       - name: Create Pull Request For Updating Release Files
