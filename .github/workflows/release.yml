@@ -22,6 +22,8 @@ jobs:
           JAVA_OPTS: -DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true
         run: |
            ./gradlew build -Prelease=true -Premote=true
+      - name: Git status
+        run: git status
       - name: Create Pull Request For Updating Release Files
         id: cpr
         uses: peter-evans/create-pull-request@v3.10.0
